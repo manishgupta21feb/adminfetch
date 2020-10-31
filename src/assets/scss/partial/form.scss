@@ -1,0 +1,135 @@
+// form-group
+.form-group {
+  margin-bottom: 30px;
+}
+
+// form-control
+.form-control {
+  height: 50px;
+  border-radius: 4px;
+  border: solid 1px #e1e1e1;
+  background-color: #ffffff;
+  padding: 0 18px;
+  font-size: 14px;
+  color: #28313c;
+  margin-bottom: 0;
+  &:focus {
+    box-shadow: none;
+    border: 1px solid #ffd938;
+  }
+  &.error-input {
+    border-color: red;
+  }
+}
+
+textarea {
+  &.form-control {
+    height: 80px;
+    padding-top: 10px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+// input-with-icon
+.input-with-icon {
+  position: relative;
+  .show-hide-icon {
+    position: absolute;
+    right: 12px;
+    top: 17px;
+    cursor: pointer;
+    color: #a2a2a2;
+  }
+}
+
+// error-text
+.error-text {
+  font-size: 12px;
+  position: absolute;
+  margin: 6px 0 0 18px;
+  color: red;
+}
+
+// custom-dropdown
+.custom-dropdown {
+  .dropdown-toggle {
+    min-width: auto;
+    background: none !important;
+    height: auto;
+    font-size: 15px;
+    color: #28313c !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: none !important;
+    &:hover, &:active, &:focus {
+      background: none !important;
+      color: #28313c !important;
+    }
+    &:after {
+      margin-left: 8px;
+    }
+  }
+  .dropdown-menu {
+    width: 150px;
+    border-radius: 3px;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 0;
+    border: none;
+    transform: none !important;
+    top: 35px !important;
+    right: 0 !important;
+    left: auto !important;
+    .dropdown-item {
+      font-size: 14px;
+      color: #28313c;
+      padding: 15px;
+      border-bottom: 1px solid #e2e0e0;
+      &:last-child {
+        border: none;
+      }
+      &:active {
+        background-color: #f8f9fa;
+      }
+    }
+  }
+}
+
+//custom-search
+.custom-search {
+  margin-bottom: 0;
+  position: relative;
+  width: 230px;
+  .form-control {
+    height: 40px;
+    padding: 0 10px 0 35px;
+  }
+  .icon-search {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    background-color: white;
+    height: 38px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px 0 0 4px;
+    font-size: 15px;
+    color: #5f6a77;
+  }
+}
+
+.textarea-count {
+  text-align: right;
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}

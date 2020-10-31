@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/assets/scss/index.scss';
+import Leftside from '../src/components/Leftside';
+import Header from '../src/components/Header';
+import Restaurant from '../src/components/Restaurant';
+import Hotel from '../src/components/Hotel';
+import Gym from '../src/components/Gym';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="main-wrapper">
+        <Leftside />
+        <div className="main-wrapper-right">
+          <Switch>
+            <Route path="/" exact>
+              <Restaurant />
+            </Route>
+            <Route path="/hotel">
+              <Hotel />
+            </Route>
+            <Route path="/gym">
+              <Gym />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,89 @@
+//Modal
+.modal {
+  .modal-dialog {
+    .modal-content {
+      border: none;
+    }
+  }
+}
+
+//Modal Header
+.modal-header {
+  padding: 20px 30px;
+  .modal-title {
+    font-size: 20px;
+  }
+  .close {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    font-weight: 400;
+    font-size: 24px;
+    &:focus, &:hover {
+      outline: none;
+      opacity: 1 !important;
+    }
+  }
+}
+
+//Modal Body
+.modal-body {
+  padding: 30px 30px;
+  .form-group {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Modal Footer
+.modal-footer {
+  padding: 20px 30px;
+  .btn {
+    margin: 0;
+    min-width: 180px;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+}
+
+//Delete Modal
+.delete-modal {
+  .modal-dialog {
+    max-width: 420px;
+  }
+  .modal-body { 
+    text-align: center;
+    .modal-heading {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .modal-text {
+      font-size: 13px;
+      color: #28313c;
+      max-width: 300px;
+      margin: 0 auto 30px;
+      line-height: 1.4;
+    }
+    .modal-btn-row {
+      display: flex;
+      justify-content: center;
+      .btn {
+        height: 40px;
+        font-size: 15px;
+        min-width: 140px;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:last-child {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

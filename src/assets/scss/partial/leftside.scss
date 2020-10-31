@@ -1,0 +1,34 @@
+// left-nav-wrapper
+.left-nav-wrapper {
+  width: 260px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  li {
+    a {
+      height: 50px;
+      font-size: 14px;
+      color: #28313c;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      position: relative;
+      &.active {
+        background-color: #fffae8;
+        &:before { 
+          content: '';
+          height: 100%;
+          width: 3px;
+          background-color: #ffd938;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}
