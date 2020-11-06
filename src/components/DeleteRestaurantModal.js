@@ -1,16 +1,23 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 function DeleteRestaurantModal(props) {
 
   const onDelete = () => {
-    fetch("http://localhost:3000/restaurant/"+props.dataId, {
-      method: 'DELETE'
-    }).then(()=> {
+    // fetch("http://localhost:3000/restaurant/"+props.dataId, {
+    //   method: 'DELETE'
+    // }).then(()=> {
+    //   props.handleModal(false);
+    //   props.showData();
+    // })
+    axios.delete("http://localhost:3000/restaurant/"+props.dataId).then((response)=> {
       props.handleModal(false);
       props.showData();
-    })
+    }).catch((error)=> {
+      console.log(error);
+    }) 
   }
 
   return (

@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 function EditRestaurantModal(props) {
   const { register, handleSubmit, errors } = useForm({
@@ -19,24 +20,35 @@ function EditRestaurantModal(props) {
 
   //For get data in form field
   useEffect(()=> {
-    fetch("http://localhost:3000/restaurant/"+props.dataId).then((response)=> {
-      response.json().then((result)=> {
-        setList(result);
-      })    
+    // fetch("http://localhost:3000/restaurant/"+props.dataId).then((response)=> {
+    //   response.json().then((result)=> {
+    //     setList(result);
+    //   })    
+    // })
+    axios.get("http://localhost:3000/restaurant/"+props.dataId).then((response)=> {
+      setList(response.data)
+    }).catch((error)=> {
+      console.log("error");
     })
   }, [props.dataId]);
 
   //Submit Updated Form
   const onSubmit = (list) => {
-    fetch("http://localhost:3000/restaurant/"+props.dataId, {
-      method: "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(list)
-    }).then(()=> {
+    // fetch("http://localhost:3000/restaurant/"+props.dataId, {
+    //   method: "PUT",
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(list)
+    // }).then(()=> {
+    //   props.handleModal(false);
+    //   props.showData();
+    // })
+    axios.put("http://localhost:3000/restaurant/"+props.dataId, list).then((response)=> {
       props.handleModal(false);
       props.showData();
+    }).catch((error)=> {
+      console.log(error);
     })
   }
 

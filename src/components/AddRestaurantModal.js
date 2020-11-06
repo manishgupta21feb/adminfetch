@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 function AddRestaurantModal(props) {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -11,15 +12,22 @@ function AddRestaurantModal(props) {
 
   //Submit Form
   const onSubmit = (data) => {
-    fetch("http://localhost:3000/restaurant", {
-      method: 'Post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then(()=> {
+    // fetch("http://localhost:3000/restaurant", {
+    //   method: 'Post',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data)
+    // }).then(()=> {
+    //   props.handleModal(false);
+    //   props.showData();
+    // })
+    axios.post("http://localhost:3000/restaurant", data)
+    .then((response)=> {
       props.handleModal(false);
       props.showData();
+    }).catch((error)=> {
+      console.log(error);
     })
   }
   

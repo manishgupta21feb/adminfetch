@@ -8,6 +8,7 @@ import AddRestaurantModal from '../components/AddRestaurantModal';
 import EditRestaurantModal from '../components/EditRestaurantModal';
 import DeleteRestaurantModal from '../components/DeleteRestaurantModal';
 import { useState } from 'react';
+import axios from 'axios';
 
 function Restaurant() {
 
@@ -38,10 +39,15 @@ function Restaurant() {
 
   //Get Data
   const getData = () => {
-    fetch("http://localhost:3000/restaurant").then((response)=> {
-      response.json().then((result)=> {
-        setList(result);
-      })
+    // fetch("http://localhost:3000/restaurant").then((response)=> {
+    //   response.json().then((result)=> {
+    //     setList(result);
+    //   })
+    // })
+    axios.get("http://localhost:3000/restaurant").then((response)=> {
+      setList(response.data)
+    }).catch((error)=> {
+      console.log(error)
     })
   }
 
